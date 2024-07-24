@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +65,53 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppData\AuthorisationHelper.cs" />
+    <Compile Include="AppData\MessageBoxHelper.cs" />
+    <Compile Include="Model\Dish.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Guest.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GuestDish.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OvertimeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OvertimeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OvertimeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OvertimeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OvertimeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Shift.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShiftStaff.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Staff.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Status.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Table.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Type.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\AuthorisationWindow.xaml.cs">
       <DependentUpon>AuthorisationWindow.xaml</DependentUpon>
@@ -81,6 +135,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\OvertimeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OvertimeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\OvertimeModel.edmx.diagram">
+      <DependentUpon>OvertimeModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\PasswordBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\TextBlockStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,9 +178,25 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Resources\" />
     <Folder Include="Views\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\OvertimeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OvertimeModel.Context.cs</LastGenOutput>
+      <DependentUpon>OvertimeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\OvertimeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OvertimeModel.edmx</DependentUpon>
+      <LastGenOutput>OvertimeModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

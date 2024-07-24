@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles\DatePickerStyle.xaml"/>
                 <ResourceDictionary Source="Styles\TextBlockStyle.xaml"/>
                 <ResourceDictionary Source="Styles\TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles\PasswordBoxStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

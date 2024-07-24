@@ -5,9 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
         mc:Ignorable="d"
-        Title="Окно регистрации" Height="450" Width="800"
+        Title="Окно регистрации" Height="450" Width="700" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/LOGO.png" HorizontalAlignment="Left"/>
+        <TextBlock Text="Авторизация" FontSize="30" FontWeight="SemiBold" Grid.Row="1" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".7*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Логин:" HorizontalAlignment="Right"/>
+            <TextBox Name="LoginTb" Grid.Column="2"/>
+            <TextBlock Text="Пароль:" Grid.Row="2" HorizontalAlignment="Right"/>
+            <PasswordBox Name="PasswordTb" Grid.Column="2" Grid.Row="2"/>
+        </Grid>
+        <Button Name="EnterBtn" Click="EnterBtn_Click" Content="Войти" Grid.Row="4"/>
     </Grid>
 </Window>

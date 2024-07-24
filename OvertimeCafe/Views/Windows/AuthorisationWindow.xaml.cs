@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OvertimeCafe.AppData;
+using OvertimeCafe.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,22 @@ namespace OvertimeCafe.Views.Windows
     /// </summary>
     public partial class AuthorisationWindow : Window
     {
+        private static OvertimeDbEntities _context = App.GetContext();
         public AuthorisationWindow()
         {
             InitializeComponent();
+        }
+
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password) == true)
+            {
+                MessageBoxHelper.Information("Пользователь авторизован.");
+            }
+            else
+            {
+                MessageBoxHelper.Information("Ебень.");
+            }
         }
     }
 }

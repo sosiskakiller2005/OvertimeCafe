@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OvertimeCafe.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,14 @@ namespace OvertimeCafe
     /// </summary>
     public partial class App : Application
     {
+        private static OvertimeDbEntities _context;
+        public static OvertimeDbEntities GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new OvertimeDbEntities();
+            }
+            return _context;
+        }
     }
 }
