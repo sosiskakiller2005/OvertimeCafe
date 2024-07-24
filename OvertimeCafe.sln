@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OvertimeCafe", "OvertimeCafe\OvertimeCafe.csproj", "{B7813B27-BA8F-486B-AF66-07C166FAD3D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7813B27-BA8F-486B-AF66-07C166FAD3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7813B27-BA8F-486B-AF66-07C166FAD3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7813B27-BA8F-486B-AF66-07C166FAD3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7813B27-BA8F-486B-AF66-07C166FAD3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3267ACC1-D7C6-4523-9AAC-5A6427C7AF4A}
+	EndGlobalSection
+EndGlobal
