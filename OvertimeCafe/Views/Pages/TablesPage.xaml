@@ -1,0 +1,30 @@
+﻿<Page x:Class="OvertimeCafe.Views.Pages.TablesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OvertimeCafe.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="268" d:DesignWidth="800"
+      Title="TablesPage">
+    <Page.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style></Page.Resources>
+
+    <Grid>
+        <ListBox Name="TablesLB" HorizontalContentAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="200" Margin="0 5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>   
+
+                        <TextBlock Text="{Binding Number, StringFormat={}{0} столик}" HorizontalAlignment="Center" Padding="10 5" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

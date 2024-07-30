@@ -31,7 +31,12 @@ namespace OvertimeCafe.Views.Windows
         {
             if (AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password) == true)
             {
-                MessageBoxHelper.Information("Пользователь авторизован.");
+                if (AuthorisationHelper.selectedUser.RoleId == 4)
+                {
+                    AdminWindow adminWindow = new AdminWindow();
+                    adminWindow.Show();
+                    Close();
+                }
             }
             else
             {

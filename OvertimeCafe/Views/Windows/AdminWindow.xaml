@@ -1,0 +1,44 @@
+﻿<Window x:Class="OvertimeCafe.Views.Windows.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
+        mc:Ignorable="d"
+        Height="500" Width="800" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".4*" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="TablesBtn" Click="TablesBtn_Click" Content="Список столов"/>
+            <Button Width="250" Grid.Column="2" Name="StaffBtn" Click="StaffBtn_Click" Content="Список работников"/>
+            <Button Grid.Column="4" Name="ShiftBtn" Click="ShiftBtn_Click" Content="Список смен"/>
+        </Grid>
+
+        <Frame Name="MainFrame" Grid.Row="1">
+            <Frame.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="0" />
+                </Style></Frame.Resources>
+        </Frame>
+        <Button Name="BackBtn" Content="Выйти" Click="BackBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+    </Grid>
+</Window>

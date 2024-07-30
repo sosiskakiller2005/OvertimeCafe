@@ -7,5 +7,6 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Width" Value="300" />
+        <Setter Property="BorderBrush" Value="Black" />
     </Style>
 </ResourceDictionary>

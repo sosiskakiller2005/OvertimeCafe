@@ -14,6 +14,7 @@ namespace OvertimeCafe.Model
     
     public partial class Table
     {
+        private static OvertimeDbEntities _context = App.GetContext();
         public Table()
         {
             this.Guest = new HashSet<Guest>();
@@ -21,6 +22,7 @@ namespace OvertimeCafe.Model
     
         public int Id { get; set; }
         public int Number { get; set; }
+
         public Nullable<int> StaffId { get; set; }
     
         public virtual ICollection<Guest> Guest { get; set; }
