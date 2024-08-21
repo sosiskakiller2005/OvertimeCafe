@@ -1,4 +1,5 @@
-﻿using OvertimeCafe.Views.Pages;
+﻿using OvertimeCafe.Model;
+using OvertimeCafe.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +35,14 @@ namespace OvertimeCafe.Views.Windows
 
         private void StaffBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            StaffPage staffPage = new StaffPage();
+            MainFrame.Navigate(staffPage);
         }
 
         private void ShiftBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ShiftPage shiftPage = new ShiftPage();
+            MainFrame.Navigate(shiftPage);
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

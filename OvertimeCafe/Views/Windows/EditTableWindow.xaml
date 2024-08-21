@@ -1,0 +1,32 @@
+﻿<Window x:Class="OvertimeCafe.Views.Windows.EditTableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
+        mc:Ignorable="d"
+        Height="400" Width="600" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Номер столика:" Margin="20 0 0 0"/>
+        <TextBox Name="TableNumberTb" Grid.Column="2" Width="150"/>
+        <Button Name="EidtBtn" Content="Изменить" Click="EidtBtn_Click" Grid.Row="1"/>
+        <Button Name="DeleteBTn" Content="Удалить" Click="DeleteBTn_Click" Grid.Row="1" Grid.Column="2"/>
+    </Grid>
+</Window>

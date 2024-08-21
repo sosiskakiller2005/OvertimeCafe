@@ -13,6 +13,10 @@
         </Style></Page.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".3*" />
+        </Grid.RowDefinitions>
         <ListBox Name="TablesLB" HorizontalContentAlignment="Center" MouseDoubleClick="TablesLB_MouseDoubleClick" Width="750">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -26,5 +30,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <Button Name="EditBtn" Content="Редактировать" Click="EditBtn_Click" Grid.Row="1" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+        <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="1" HorizontalAlignment="Left" Margin="250 0 0 0"/>
     </Grid>
 </Page>
