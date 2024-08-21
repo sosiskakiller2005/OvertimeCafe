@@ -71,6 +71,9 @@
     <Compile Include="Model\Dish.cs">
       <DependentUpon>OvertimeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\DishStatus.cs">
+      <DependentUpon>OvertimeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Guest.cs">
       <DependentUpon>OvertimeModel.tt</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     <Compile Include="Views\Windows\AuthorisationWindow.xaml.cs">
       <DependentUpon>AuthorisationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Windows\TableWindow.xaml.cs">
+      <DependentUpon>TableWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -166,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ExpandableListboxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\PasswordBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\AuthorisationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\TableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

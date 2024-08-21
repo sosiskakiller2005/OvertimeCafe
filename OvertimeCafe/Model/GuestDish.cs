@@ -17,8 +17,10 @@ namespace OvertimeCafe.Model
         public int Id { get; set; }
         public int GuestId { get; set; }
         public int DishId { get; set; }
+        public Nullable<int> DishStatusId { get; set; }
     
         public virtual Dish Dish { get; set; }
         public virtual Guest Guest { get; set; }
+        public virtual DishStatus DishStatus { get; set; }
     }
 }

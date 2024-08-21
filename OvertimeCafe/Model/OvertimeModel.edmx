@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище OvertimeDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище OvertimeDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Dish">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,6 +14,13 @@
           <Property Name="Composition" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DishStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Guest">
           <Key>
@@ -30,6 +37,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GuestId" Type="int" Nullable="false" />
           <Property Name="DishId" Type="int" Nullable="false" />
+          <Property Name="DishStatusId" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -124,6 +132,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_GuestDish_DishStatus">
+          <End Role="DishStatus" Type="Self.DishStatus" Multiplicity="0..1" />
+          <End Role="GuestDish" Type="Self.GuestDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GuestDish">
+              <PropertyRef Name="DishStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_GuestDish_Guest">
           <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
           <End Role="GuestDish" Type="Self.GuestDish" Multiplicity="*" />
@@ -198,6 +218,7 @@
         </Association>
         <EntityContainer Name="Хранилище OvertimeDbModelContainer">
           <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DishStatus" EntityType="Self.DishStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GuestDish" EntityType="Self.GuestDish" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -217,6 +238,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_GuestDish_Dish" Association="Self.FK_GuestDish_Dish">
             <End Role="Dish" EntitySet="Dish" />
+            <End Role="GuestDish" EntitySet="GuestDish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDish_DishStatus" Association="Self.FK_GuestDish_DishStatus">
+            <End Role="DishStatus" EntitySet="DishStatus" />
             <End Role="GuestDish" EntitySet="GuestDish" />
           </AssociationSet>
           <AssociationSet Name="FK_GuestDish_Guest" Association="Self.FK_GuestDish_Guest">
@@ -244,8 +269,7 @@
             <End Role="Table" EntitySet="Table" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OvertimeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -280,6 +304,8 @@
           <Property Name="DishId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Dish" Relationship="Self.FK_GuestDish_Dish" FromRole="GuestDish" ToRole="Dish" />
           <NavigationProperty Name="Guest" Relationship="Self.FK_GuestDish_Guest" FromRole="GuestDish" ToRole="Guest" />
+          <Property Name="DishStatusId" Type="Int32" />
+          <NavigationProperty Name="DishStatus" Relationship="OvertimeDbModel.FK_GuestDish_DishStatus" FromRole="GuestDish" ToRole="DishStatus" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -505,7 +531,32 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Table" EntitySet="Table" />
           </AssociationSet>
+          <EntitySet Name="DishStatus" EntityType="OvertimeDbModel.DishStatus" />
+          <AssociationSet Name="FK_GuestDish_DishStatus" Association="OvertimeDbModel.FK_GuestDish_DishStatus">
+            <End Role="DishStatus" EntitySet="DishStatus" />
+            <End Role="GuestDish" EntitySet="GuestDish" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="DishStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GuestDish" Relationship="OvertimeDbModel.FK_GuestDish_DishStatus" FromRole="DishStatus" ToRole="GuestDish" />
+        </EntityType>
+        <Association Name="FK_GuestDish_DishStatus">
+          <End Type="OvertimeDbModel.DishStatus" Role="DishStatus" Multiplicity="0..1" />
+          <End Type="OvertimeDbModel.GuestDish" Role="GuestDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GuestDish">
+              <PropertyRef Name="DishStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -535,6 +586,7 @@
           <EntitySetMapping Name="GuestDish">
             <EntityTypeMapping TypeName="OvertimeDbModel.GuestDish">
               <MappingFragment StoreEntitySet="GuestDish">
+                <ScalarProperty Name="DishStatusId" ColumnName="DishStatusId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="GuestId" ColumnName="GuestId" />
                 <ScalarProperty Name="DishId" ColumnName="DishId" />
@@ -602,6 +654,14 @@
               <MappingFragment StoreEntitySet="Type">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DishStatus">
+            <EntityTypeMapping TypeName="OvertimeDbModel.DishStatus">
+              <MappingFragment StoreEntitySet="DishStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

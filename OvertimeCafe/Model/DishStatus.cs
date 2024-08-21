@@ -12,18 +12,16 @@ namespace OvertimeCafe.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Table
+    public partial class DishStatus
     {
-        public Table()
+        public DishStatus()
         {
-            this.Guest = new HashSet<Guest>();
+            this.GuestDish = new HashSet<GuestDish>();
         }
     
         public int Id { get; set; }
-        public int Number { get; set; }
-        public Nullable<int> StaffId { get; set; }
+        public string Name { get; set; }
     
-        public virtual ICollection<Guest> Guest { get; set; }
-        public virtual Staff Staff { get; set; }
+        public virtual ICollection<GuestDish> GuestDish { get; set; }
     }
 }

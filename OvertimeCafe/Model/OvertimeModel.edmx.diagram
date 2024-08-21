@@ -24,6 +24,8 @@
         <AssociationConnector Association="OvertimeDbModel.FK_ShiftStaff_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="OvertimeDbModel.FK_Staff_Status" ManuallyRouted="false" />
         <AssociationConnector Association="OvertimeDbModel.FK_Table_Staff" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OvertimeDbModel.DishStatus" Width="1.5" PointX="9.375" PointY="9.25" />
+        <AssociationConnector Association="OvertimeDbModel.FK_GuestDish_DishStatus" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

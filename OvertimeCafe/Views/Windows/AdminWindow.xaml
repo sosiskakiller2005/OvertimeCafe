@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
         mc:Ignorable="d"
-        Height="500" Width="800" 
+        Height="700" Width="800" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Border">
@@ -15,7 +15,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height=".4*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="1.5 *" />
             <RowDefinition Height=".4*" />
         </Grid.RowDefinitions>
 
@@ -33,7 +33,7 @@
             <Button Grid.Column="4" Name="ShiftBtn" Click="ShiftBtn_Click" Content="Список смен"/>
         </Grid>
 
-        <Frame Name="MainFrame" Grid.Row="1">
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden">
             <Frame.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="0" />

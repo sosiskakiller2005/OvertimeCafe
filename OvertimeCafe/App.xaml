@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Styles\TextBlockStyle.xaml"/>
                 <ResourceDictionary Source="Styles\TextBoxStyle.xaml"/>
                 <ResourceDictionary Source="Styles\PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles\ExpandableListboxStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

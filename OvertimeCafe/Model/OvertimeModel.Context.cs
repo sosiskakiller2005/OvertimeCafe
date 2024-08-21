@@ -35,5 +35,6 @@ namespace OvertimeCafe.Model
         public DbSet<Status> Status { get; set; }
         public DbSet<Table> Table { get; set; }
         public DbSet<Type> Type { get; set; }
+        public DbSet<DishStatus> DishStatus { get; set; }
     }
 }

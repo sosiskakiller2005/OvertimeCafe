@@ -1,4 +1,5 @@
 ﻿using OvertimeCafe.Model;
+using OvertimeCafe.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Table = OvertimeCafe.Model.Table;
 
 namespace OvertimeCafe.Views.Pages
 {
@@ -26,6 +28,13 @@ namespace OvertimeCafe.Views.Pages
         {
             InitializeComponent();
             TablesLB.ItemsSource = _context.Table.ToList();
+        }
+
+        private void TablesLB_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Table selectedTable = TablesLB.SelectedItem as Table;
+            TableWindow tableWindow = new TableWindow(selectedTable);
+            tableWindow.ShowDialog();
         }
     }
 }
