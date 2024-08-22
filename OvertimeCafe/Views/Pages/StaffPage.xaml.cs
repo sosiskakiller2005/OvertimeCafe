@@ -1,4 +1,5 @@
 ﻿using OvertimeCafe.Model;
+using OvertimeCafe.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,30 @@ namespace OvertimeCafe.Views.Pages
         {
             InitializeComponent();
             StaffLB.ItemsSource = _context.Staff.ToList();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditStaffWindow editStaffWindow = new EditStaffWindow();
+            editStaffWindow.ShowDialog();
+            if (editStaffWindow.DialogResult == true)
+            {
+                UpdateList();
+            }
+        }
+
+        private void StaffLB_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            EditStaffWindow editStaffWindow = new EditStaffWindow(StaffLB.SelectedItem as Staff);
+            editStaffWindow.ShowDialog();
+            if (editStaffWindow.DialogResult == true)
+            {
+                UpdateList();
+            }
+        }
+        private void UpdateList()
+        {
+            StaffLB.ItemsSource = App.GetContext().Staff.ToList();
         }
     }
 }

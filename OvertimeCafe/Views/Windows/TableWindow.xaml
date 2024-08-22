@@ -12,8 +12,15 @@
             <Setter Property="CornerRadius" Value="0" />
         </Style>
     </Window.Resources> 
+    
     <Grid>
-        <ListBox Name="GuestLB"  Style="{StaticResource expandable_listbox}" Width="750"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
         
+        <ListBox Name="GuestLB"  Style="{StaticResource expandable_listbox}" Width="750"/>
+        <Button Name="EditBtn" Content="Редактировать" Click="EditBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="20 0 0 0"/>
     </Grid>
 </Window>

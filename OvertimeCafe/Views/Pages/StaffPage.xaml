@@ -14,7 +14,13 @@
     </Page.Resources>
 
     <Grid>
-        <ListBox Name="StaffLB" HorizontalContentAlignment="Center" Width="750">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height=".2*" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Name="StaffLB" MouseDoubleClick="StaffLB_MouseDoubleClick" HorizontalContentAlignment="Center" Width="750">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="650" Margin="0 5">
@@ -36,5 +42,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="20 0 0 0"/>
     </Grid>
 </Page>

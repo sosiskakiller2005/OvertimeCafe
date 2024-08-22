@@ -29,18 +29,12 @@ namespace OvertimeCafe.Views.Windows
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password) == true)
+            AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password);
+            if (AuthorisationHelper.selectedUser.RoleId == 4)
             {
-                if (AuthorisationHelper.selectedUser.RoleId == 4)
-                {
-                    AdminWindow adminWindow = new AdminWindow();
-                    adminWindow.Show();
-                    Close();
-                }
-            }
-            else
-            {
-                MessageBoxHelper.Information("Ебень.");
+                AdminWindow adminWindow = new AdminWindow();
+                adminWindow.Show();
+                Close();
             }
         }
     }

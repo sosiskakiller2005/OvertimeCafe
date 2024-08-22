@@ -1,0 +1,50 @@
+﻿<Window x:Class="OvertimeCafe.Views.Windows.EditStaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
+        mc:Ignorable="d"
+        Height="500" Width="650" 
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid Name="StaffGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Имя:" Margin="20 0 0 0"/>
+        <TextBox Name="NameTb" Text="{Binding Name}" Grid.Column="2" Width="250"/>
+        <TextBlock Text="Возраст:" Margin="20 0 0 0" Grid.Row="1"/>
+        <TextBox Name="AgeTb" Text="{Binding Age}" Grid.Row="1" Grid.Column="2" Width="250"/>
+        <TextBlock Text="Номер телефона:" Margin="20 0 0 0" Grid.Row="2"/>
+        <TextBox Name="PhoneNmberTb" Text="{Binding PhoneNumber}" Grid.Row="2" Grid.Column="2" Width="250" MaxLength="11"/>
+        <TextBlock Text="Должность:" Margin="20 0 0 0" Grid.Row="3"/>
+        <ComboBox Name="RoleCmb" Grid.Row="3" Grid.Column="2" Width="250"/>
+        <TextBlock Text="Логин:" Margin="20 0 0 0" Grid.Row="4"/>
+        <TextBox Name="LoginTb" Text="{Binding Login}" Grid.Row="4" Grid.Column="2" Width="250"/>
+        <TextBlock Text="Пароль:" Margin="20 0 0 0" Grid.Row="5"/>
+        <PasswordBox Name="PasswordTb" Grid.Row="5" Grid.Column="2" Width="250"/>
+        
+        
+        <Button Name="SaveBtn" Content="Сохранить" Click="SaveBtn_Click" Grid.Row="8"/>
+        <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="8"/>
+        <Button Name="DeleteBTn" Content="Удалить" Click="DeleteBTn_Click" Grid.Row="8" Grid.Column="2"/>
+    </Grid>
+</Window>

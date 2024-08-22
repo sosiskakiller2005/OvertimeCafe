@@ -22,11 +22,35 @@ namespace OvertimeCafe.Views.Windows
     public partial class TableWindow : Window
     {
         private OvertimeDbEntities _context = App.GetContext();
+        private Table _selectedTable;
         public TableWindow(Table selectedTable)
         {
             InitializeComponent();
+            _selectedTable = selectedTable;
             List<GuestDish> guestDishes = _context.GuestDish.ToList();
-            GuestLB.ItemsSource = guestDishes.Where(gu => gu.Guest.TableId == selectedTable.Id).ToList();
+            try
+            {
+                GuestLB.ItemsSource = guestDishes.Where(gu => gu.Guest.TableId == selectedTable.Id).ToList();
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditGuestsWindow editGuestsWindow = new EditGuestsWindow(_selectedTable);
+            editGuestsWindow.ShowDialog();
+            if (editGuestsWindow.DialogResult == true)
+            {
+                UpdateList();
+            }
+        }
+        private void UpdateList()
+        {
+            GuestLB.ItemsSource = App.GetContext().Guest.Where(g => g.Table == _selectedTable).ToList();
         }
     }
 }
