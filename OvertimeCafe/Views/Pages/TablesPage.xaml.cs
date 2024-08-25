@@ -34,8 +34,11 @@ namespace OvertimeCafe.Views.Pages
         private void TablesLB_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Table selectedTable = TablesLB.SelectedItem as Table;
-            TableWindow tableWindow = new TableWindow(selectedTable);
-            tableWindow.ShowDialog();
+            //TableWindow tableWindow = new TableWindow(selectedTable);
+            //tableWindow.ShowDialog();
+
+            OrdersWindow ordersWindow = new OrdersWindow(selectedTable);
+            ordersWindow.ShowDialog();
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)

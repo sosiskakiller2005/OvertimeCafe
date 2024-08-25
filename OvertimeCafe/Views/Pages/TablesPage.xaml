@@ -17,7 +17,7 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height=".3*" />
         </Grid.RowDefinitions>
-        <ListBox Name="TablesLB" HorizontalContentAlignment="Center" MouseDoubleClick="TablesLB_MouseDoubleClick" Width="750">
+        <ListBox Name="TablesLB" HorizontalContentAlignment="Center" MouseDoubleClick="TablesLB_MouseDoubleClick" Width="750" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="200" Margin="0 5">

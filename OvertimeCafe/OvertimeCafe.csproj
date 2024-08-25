@@ -143,6 +143,9 @@
     <Compile Include="Views\Windows\EditTableWindow.xaml.cs">
       <DependentUpon>EditTableWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Windows\OrdersWindow.xaml.cs">
+      <DependentUpon>OrdersWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\TableWindow.xaml.cs">
       <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
@@ -243,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\EditTableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\OrdersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

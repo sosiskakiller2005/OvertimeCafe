@@ -17,10 +17,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height=".3*" />
         </Grid.RowDefinitions>
+
+        <ListBox Name="GuestLB"  Style="{StaticResource expandable_listbox}" Width="750" Padding="10 10"/>
         
-        <ListBox Name="GuestLB"  Style="{StaticResource expandable_listbox}" Width="750"/>
-        <Button Name="EditBtn" Content="Редактировать" Click="EditBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+        <Button Name="OrderBtn" Content="Редактировать" Click="EditBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="250 0 0 0"/>
+        <Button Name="EditBtn" Content="Редактировать" Click="EditBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="250 0 0 0"/>
     </Grid>
 </Window>
