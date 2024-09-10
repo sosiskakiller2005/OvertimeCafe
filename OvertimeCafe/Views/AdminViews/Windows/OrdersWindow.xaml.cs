@@ -40,7 +40,7 @@ namespace OvertimeCafe.Views.Windows
 
         private void DishesLb_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
     }
 }

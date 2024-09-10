@@ -1,4 +1,5 @@
 ﻿using OvertimeCafe.Model;
+using OvertimeCafe.Views.AdminViews.Pages;
 using OvertimeCafe.Views.Pages;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,13 @@ namespace OvertimeCafe.Views.Windows
             InitializeComponent();
             TablesPage tablesPage = new TablesPage();
             MainFrame.Navigate(tablesPage);
+            TablesBtn.Visibility = Visibility.Collapsed;
+            AllOrdersBtn.Visibility = Visibility.Visible;
         }
         private void TablesBtn_Click(object sender, RoutedEventArgs e)
         {
+            TablesBtn.Visibility = Visibility.Collapsed;
+            AllOrdersBtn.Visibility = Visibility.Visible;
             TablesPage tablesPage = new TablesPage();
             MainFrame.Navigate(tablesPage);
         }
@@ -52,5 +57,12 @@ namespace OvertimeCafe.Views.Windows
             Close();
         }
 
+        private void AllOrdersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TablesBtn.Visibility = Visibility.Visible;
+            AllOrdersBtn.Visibility = Visibility.Collapsed;
+            AllOrdersPage allOrdersPage = new AllOrdersPage();
+            MainFrame.Navigate(allOrdersPage);
+        }
     }
 }

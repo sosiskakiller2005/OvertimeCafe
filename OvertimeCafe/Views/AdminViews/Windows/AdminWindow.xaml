@@ -29,6 +29,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Name="TablesBtn" Click="TablesBtn_Click" Content="Список столов"/>
+            <Button Name="AllOrdersBtn" Click="AllOrdersBtn_Click" Content="Все заказы"/>
             <Button Width="250" Grid.Column="2" Name="StaffBtn" Click="StaffBtn_Click" Content="Список работников"/>
             <Button Grid.Column="4" Name="ShiftBtn" Click="ShiftBtn_Click" Content="Список смен"/>
         </Grid>

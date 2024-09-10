@@ -116,37 +116,40 @@
     <Compile Include="Model\Type.cs">
       <DependentUpon>OvertimeModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\ShiftPage.xaml.cs">
+    <Compile Include="Views\AdminViews\Pages\AllOrdersPage.xaml.cs">
+      <DependentUpon>AllOrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminViews\Pages\ShiftPage.xaml.cs">
       <DependentUpon>ShiftPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\StaffPage.xaml.cs">
+    <Compile Include="Views\AdminViews\Pages\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\TablesPage.xaml.cs">
+    <Compile Include="Views\AdminViews\Pages\TablesPage.xaml.cs">
       <DependentUpon>TablesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\AddTableWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\AddTableWindow.xaml.cs">
       <DependentUpon>AddTableWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\AdminWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\AuthorisationWindow.xaml.cs">
       <DependentUpon>AuthorisationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\EditGuestsWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\EditGuestsWindow.xaml.cs">
       <DependentUpon>EditGuestsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\EditStaffWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\EditStaffWindow.xaml.cs">
       <DependentUpon>EditStaffWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\EditTableWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\EditTableWindow.xaml.cs">
       <DependentUpon>EditTableWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\OrdersWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\OrdersWindow.xaml.cs">
       <DependentUpon>OrdersWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\TableWindow.xaml.cs">
+    <Compile Include="Views\AdminViews\Windows\TableWindow.xaml.cs">
       <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -213,23 +216,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\ShiftPage.xaml">
+    <Page Include="Views\AdminViews\Pages\AllOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\StaffPage.xaml">
+    <Page Include="Views\AdminViews\Pages\ShiftPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\TablesPage.xaml">
+    <Page Include="Views\AdminViews\Pages\StaffPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\AddTableWindow.xaml">
+    <Page Include="Views\AdminViews\Pages\TablesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\AdminWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\AddTableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminViews\Windows\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,28 +244,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\EditGuestsWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\EditGuestsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\EditStaffWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\EditStaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\EditTableWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\EditTableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\OrdersWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\OrdersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\TableWindow.xaml">
+    <Page Include="Views\AdminViews\Windows\TableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\ChiefViews\Pages\" />
+    <Folder Include="Views\ChiefViews\Windows\" />
+    <Folder Include="Views\WaiterViews\Pages\" />
+    <Folder Include="Views\WaiterViews\Windows\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\LOGO.png" />
   </ItemGroup>
