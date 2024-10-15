@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
         mc:Ignorable="d"
-            Height="400" Width="600" 
+            Height="300" Width="600" 
     WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Border">

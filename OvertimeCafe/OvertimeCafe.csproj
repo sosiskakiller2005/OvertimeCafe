@@ -67,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppData\AuthorisationHelper.cs" />
+    <Compile Include="AppData\FrameHelper.cs" />
     <Compile Include="AppData\MessageBoxHelper.cs" />
     <Compile Include="Model\Dish.cs">
       <DependentUpon>OvertimeModel.tt</DependentUpon>
@@ -116,17 +117,23 @@
     <Compile Include="Model\Type.cs">
       <DependentUpon>OvertimeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminViews\Pages\AddEditShiftPage.xaml.cs">
+      <DependentUpon>AddEditShiftPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminViews\Pages\AllOrdersPage.xaml.cs">
       <DependentUpon>AllOrdersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminViews\Pages\ShiftPage.xaml.cs">
-      <DependentUpon>ShiftPage.xaml</DependentUpon>
+    <Compile Include="Views\AdminViews\Pages\AllShiftsPage.xaml.cs">
+      <DependentUpon>AllShiftsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminViews\Pages\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminViews\Pages\TablesPage.xaml.cs">
       <DependentUpon>TablesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminViews\Windows\AddEditOrderWindow.xaml.cs">
+      <DependentUpon>AddEditOrderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminViews\Windows\AddTableWindow.xaml.cs">
       <DependentUpon>AddTableWindow.xaml</DependentUpon>
@@ -204,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ListBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\PasswordBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,11 +227,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AdminViews\Pages\AddEditShiftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminViews\Pages\AllOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AdminViews\Pages\ShiftPage.xaml">
+    <Page Include="Views\AdminViews\Pages\AllShiftsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminViews\Pages\TablesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminViews\Windows\AddEditOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

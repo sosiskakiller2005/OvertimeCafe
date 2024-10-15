@@ -49,5 +49,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <Button Name="AddOrderBTn" Content="Добавить" Click="AddOrderBTn_Click" Grid.Row="3" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+        <Button Name="CloseBtn" Content="Закрыть" Click="CloseBtn_Click" Grid.Row="3" HorizontalAlignment="Left" Margin="250 0 0 0"/>
     </Grid>
 </Window>

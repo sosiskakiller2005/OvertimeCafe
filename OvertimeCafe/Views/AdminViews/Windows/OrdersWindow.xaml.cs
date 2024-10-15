@@ -1,4 +1,5 @@
 ﻿using OvertimeCafe.Model;
+using OvertimeCafe.Views.AdminViews.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,19 @@ namespace OvertimeCafe.Views.Windows
 
         private void DishesLb_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            
+            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow(DishesLb.SelectedItem as GuestDish);
+            addEditOrderWindow.ShowDialog();
+        }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void AddOrderBTn_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow();
+            addEditOrderWindow.ShowDialog();
         }
     }
 }

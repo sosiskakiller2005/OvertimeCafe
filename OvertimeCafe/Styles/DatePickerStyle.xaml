@@ -1,4 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    <Style TargetType="DatePicker">
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="50" />
+    </Style>
 </ResourceDictionary>

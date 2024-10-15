@@ -4,5 +4,6 @@
         <Setter Property="FontSize" Value="25" />
         <Setter Property="FontFamily" Value="Tahoma" />
         <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
 </ResourceDictionary>

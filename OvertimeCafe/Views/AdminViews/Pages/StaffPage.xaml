@@ -19,29 +19,8 @@
             <RowDefinition Height="20" />
             <RowDefinition Height=".2*" />
         </Grid.RowDefinitions>
-        
-        <ListBox Name="StaffLB" MouseDoubleClick="StaffLB_MouseDoubleClick" HorizontalContentAlignment="Center" Width="750">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="650" Margin="0 5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="20" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="20" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
 
-                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Padding="10 5" />
-                        <TextBlock Text="{Binding Status.Name}" HorizontalAlignment="Right" Padding="10 5" Grid.Column="2"/>
-                        <TextBlock Text="{Binding Role.Name}" Grid.Row="1" HorizontalAlignment="Left" Padding="10 5" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox Name="StaffLB" Style="{StaticResource StaffLb}" MouseDoubleClick="StaffLB_MouseDoubleClick" HorizontalContentAlignment="Center" Width="750"/>
         <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="2" HorizontalAlignment="Left" Margin="20 0 0 0"/>
     </Grid>
 </Page>

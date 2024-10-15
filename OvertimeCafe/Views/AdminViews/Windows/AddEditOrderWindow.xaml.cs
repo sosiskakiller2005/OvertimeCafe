@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OvertimeCafe.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OvertimeCafe.Views.Pages
+namespace OvertimeCafe.Views.AdminViews.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ShiftPage.xaml
+    /// Логика взаимодействия для AddEditOrderWindow.xaml
     /// </summary>
-    public partial class ShiftPage : Page
+    public partial class AddEditOrderWindow : Window
     {
-        public ShiftPage()
+        public AddEditOrderWindow()
+        {
+            InitializeComponent();
+        }
+        public AddEditOrderWindow(GuestDish selectedOrder)
         {
             InitializeComponent();
         }

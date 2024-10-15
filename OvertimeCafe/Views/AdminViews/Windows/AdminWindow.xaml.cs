@@ -1,4 +1,5 @@
-﻿using OvertimeCafe.Model;
+﻿using OvertimeCafe.AppData;
+using OvertimeCafe.Model;
 using OvertimeCafe.Views.AdminViews.Pages;
 using OvertimeCafe.Views.Pages;
 using System;
@@ -29,6 +30,7 @@ namespace OvertimeCafe.Views.Windows
             MainFrame.Navigate(tablesPage);
             TablesBtn.Visibility = Visibility.Collapsed;
             AllOrdersBtn.Visibility = Visibility.Visible;
+            FrameHelper.selectedFrame = MainFrame;
         }
         private void TablesBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -46,8 +48,8 @@ namespace OvertimeCafe.Views.Windows
 
         private void ShiftBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShiftPage shiftPage = new ShiftPage();
-            MainFrame.Navigate(shiftPage);
+            AllShiftsPage allShiftsPage = new AllShiftsPage();
+            MainFrame.Navigate(allShiftsPage);
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
