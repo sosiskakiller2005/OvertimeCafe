@@ -126,6 +126,9 @@
     <Compile Include="Views\AdminViews\Pages\AllShiftsPage.xaml.cs">
       <DependentUpon>AllShiftsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminViews\Pages\OrdersPage.xaml.cs">
+      <DependentUpon>OrdersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminViews\Pages\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
     </Compile>
@@ -155,12 +158,6 @@
     </Compile>
     <Compile Include="Views\AdminViews\Windows\EditTableWindow.xaml.cs">
       <DependentUpon>EditTableWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdminViews\Windows\OrdersWindow.xaml.cs">
-      <DependentUpon>OrdersWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdminViews\Windows\TableWindow.xaml.cs">
-      <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AdminViews\Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminViews\Pages\StaffPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -279,14 +280,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminViews\Windows\EditTableWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdminViews\Windows\OrdersWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdminViews\Windows\TableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

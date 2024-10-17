@@ -1,5 +1,6 @@
 ﻿using OvertimeCafe.AppData;
 using OvertimeCafe.Model;
+using OvertimeCafe.Views.AdminViews.Pages;
 using OvertimeCafe.Views.Windows;
 using System;
 using System.Collections.Generic;
@@ -34,11 +35,7 @@ namespace OvertimeCafe.Views.Pages
         private void TablesLB_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Table selectedTable = TablesLB.SelectedItem as Table;
-            //TableWindow tableWindow = new TableWindow(selectedTable);
-            //tableWindow.ShowDialog();
-
-            OrdersWindow ordersWindow = new OrdersWindow(selectedTable);
-            ordersWindow.ShowDialog();
+            FrameHelper.selectedFrame.Navigate(new OrdersPage(selectedTable));
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)

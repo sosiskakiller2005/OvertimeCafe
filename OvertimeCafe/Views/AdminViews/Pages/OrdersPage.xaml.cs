@@ -1,4 +1,5 @@
-﻿using OvertimeCafe.Model;
+﻿using OvertimeCafe.AppData;
+using OvertimeCafe.Model;
 using OvertimeCafe.Views.AdminViews.Windows;
 using System;
 using System.Collections.Generic;
@@ -12,27 +13,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OvertimeCafe.Views.Windows
+namespace OvertimeCafe.Views.AdminViews.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для OrdersWindow.xaml
+    /// Логика взаимодействия для OrdersPage.xaml
     /// </summary>
-    public partial class OrdersWindow : Window
+    public partial class OrdersPage : Page
     {
         private static OvertimeDbEntities _context = App.GetContext();
-        public OrdersWindow(Model.Table selectedTable)
+        public OrdersPage(Model.Table selectedTable)
         {
             InitializeComponent();
             GuestCmb.ItemsSource = _context.Guest.ToList();
             GuestCmb.DisplayMemberPath = "Name";
-            GuestCmb.SelectedIndex = 1;
+            GuestCmb.SelectedIndex = 0;
             TableTbl.Text = selectedTable.Number.ToString() + " столик";
             List<GuestDish> dishes = _context.GuestDish.Where(gd => gd.GuestId == GuestCmb.SelectedIndex + 1).ToList();
             DishesLb.ItemsSource = dishes;
         }
-
         private void GuestCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<GuestDish> dishes = _context.GuestDish.Where(gd => gd.GuestId == GuestCmb.SelectedIndex + 1).ToList();
@@ -47,7 +48,7 @@ namespace OvertimeCafe.Views.Windows
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            FrameHelper.selectedFrame.GoBack();
         }
 
         private void AddOrderBTn_Click(object sender, RoutedEventArgs e)
