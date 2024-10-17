@@ -135,6 +135,9 @@
     <Compile Include="Views\AdminViews\Windows\AddEditOrderWindow.xaml.cs">
       <DependentUpon>AddEditOrderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminViews\Windows\AddStaffToShiftWindow.xaml.cs">
+      <DependentUpon>AddStaffToShiftWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminViews\Windows\AddTableWindow.xaml.cs">
       <DependentUpon>AddTableWindow.xaml</DependentUpon>
     </Compile>
@@ -248,6 +251,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminViews\Windows\AddEditOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminViews\Windows\AddStaffToShiftWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

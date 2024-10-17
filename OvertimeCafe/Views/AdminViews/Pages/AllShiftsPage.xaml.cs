@@ -26,17 +26,40 @@ namespace OvertimeCafe.Views.AdminViews.Pages
         public AllShiftsPage()
         {
             InitializeComponent();
-            ShiftsLb.ItemsSource = _context.ShiftStaff.ToList();
+            ShiftsLb.ItemsSource = _context.Shift.ToList();
         }
 
         private void ShiftsLb_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            FrameHelper.selectedFrame.Navigate(new AddEditShiftPage(ShiftsLb.SelectedItem as ShiftStaff));
+            FrameHelper.selectedFrame.Navigate(new AddEditShiftPage(ShiftsLb.SelectedItem as Shift));
         }
 
         private void NewShiftBTn_Click(object sender, RoutedEventArgs e)
         {
             FrameHelper.selectedFrame.Navigate(new AddEditShiftPage());
+        }
+
+        private void DeleteShiftBTn_Click(object sender, RoutedEventArgs e)
+        {
+            Shift selectedShift = ShiftsLb.SelectedItem as Shift;
+            List<ShiftStaff> shiftStaff = _context.ShiftStaff.ToList();
+            if (selectedShift != null)
+            {
+                if (MessageBoxHelper.Question("Удалить выбранную смену?"))
+                {
+                    for (int i = 0; i < shiftStaff.Count(); i++)
+                    {
+                        if (shiftStaff.ElementAt(i).Shift == selectedShift)
+                        {
+                            _context.ShiftStaff.Remove(shiftStaff.ElementAt(i));
+                        }
+                    }
+                    _context.Shift.Remove(selectedShift);
+                    _context.SaveChanges();
+                    MessageBoxHelper.Information("Смена удалена.");
+                    ShiftsLb.ItemsSource = _context.Shift.ToList();
+                }
+            }
         }
     }
 }

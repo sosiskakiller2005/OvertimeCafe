@@ -17,8 +17,11 @@
         <Border Height="20"/>
         <TextBlock Text="Выбранные сотрудники:"/>
         <Border Height="20"/>
-        <ListBox Name="StaffLb" Style="{StaticResource ShiftStaffLb}" Height="240"/>
+        <ListBox Name="StaffLb" Style="{StaticResource ShiftStaffLb}" MouseDoubleClick="StaffLb_MouseDoubleClick" Height="240"/>
         <Border Height="20"/>
-        <Button Name="AddStaff" Click="AddStaff_Click" Content="Добавить еще" HorizontalAlignment="Left"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="AddStaff" Click="AddStaff_Click" Content="Добавить еще" HorizontalAlignment="Left"/>
+            <Button Name="SaveBTn" Click="SaveBTn_Click" Content="Сохранить" Margin="20 0 0 0"/>
+        </StackPanel>
     </StackPanel>
 </Page>

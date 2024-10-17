@@ -18,11 +18,12 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="300">
-                        <TextBlock Text="{Binding Shift.Date, StringFormat={}Дата смены: {0:dd.MM.yyy}}" Padding="10" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Date, StringFormat={}Дата смены: {0:dd.MM.yyy}}" Padding="10" HorizontalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Name="NewShiftBTn" Content="Добавить смену" Click="NewShiftBTn_Click" Grid.Row="2" HorizontalAlignment="Left"/>
+        <Button Name="DeleteShiftBTn" Content="Удалить смену" Click="DeleteShiftBTn_Click" Grid.Row="2" HorizontalAlignment="Center" Margin="0 0 80 0"/>
     </Grid>
 </Page>
