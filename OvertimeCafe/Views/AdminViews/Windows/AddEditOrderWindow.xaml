@@ -4,34 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OvertimeCafe.Views.AdminViews.Windows"
-        mc:Ignorable="d" Height="300" Width="600"
+        mc:Ignorable="d" Height="500" Width="600"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid Name="DishGrid">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="1.5*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
             
-            <ListBox Name="DishesLb" Grid.Row="2" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Background="#FF81BF5D" HorizontalAlignment="Center" Width="auto" Margin="0 5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="20" />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock Text="{Binding Dish.Name}" HorizontalAlignment="Center" Padding="10 5" />
-                            <TextBlock Text="{Binding DishStatus.Name}" Grid.Column="1"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
+            <TextBlock Name="DishTb" Text="{Binding Dish.Name}" Grid.Column="1" TextWrapping="Wrap"/>
+            <Button Name="ChooseBtn" Content="Выбрать" Click="ChooseBtn_Click" Grid.Column="2"/>
+            <Image Source="{Binding Dish.Photo}" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Text="{Binding Dish.Type.Name}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Dish.Composition, StringFormat={}Состав: {0}}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="25  0 0 0"/>
+            <Button Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_Click" Grid.Row="3" Grid.Column="1"/>
         </Grid>
     </Grid>
 </Window>

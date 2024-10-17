@@ -20,13 +20,31 @@ namespace OvertimeCafe.Views.AdminViews.Windows
     /// </summary>
     public partial class AddEditOrderWindow : Window
     {
+        private static OvertimeDbEntities _context = App.GetContext();
+        private static GuestDish _selectedOrder;
         public AddEditOrderWindow()
         {
             InitializeComponent();
+            DeleteBtn.Visibility = Visibility.Collapsed;
+            ChooseBtn.Visibility = Visibility.Visible;
         }
         public AddEditOrderWindow(GuestDish selectedOrder)
         {
             InitializeComponent();
+            DeleteBtn.Visibility = Visibility.Visible;
+            ChooseBtn.Visibility = Visibility.Collapsed;
+            DishGrid.DataContext = selectedOrder;
+            _selectedOrder = selectedOrder;
+        }
+
+        private void ChooseBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

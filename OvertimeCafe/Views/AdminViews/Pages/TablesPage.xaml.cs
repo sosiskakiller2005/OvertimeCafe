@@ -64,6 +64,7 @@ namespace OvertimeCafe.Views.Pages
                 UpdateList();
             }
         }
+
         /// <summary>
         /// Обновление листбокса.
         /// </summary>
