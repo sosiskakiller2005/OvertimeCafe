@@ -1,0 +1,30 @@
+﻿<Window x:Class="OvertimeCafe.Views.AdminViews.Windows.SelectDishWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OvertimeCafe.Views.AdminViews.Windows"
+        mc:Ignorable="d"
+        Title="Окно выбора блюда" Height="640" Width="870" MinHeight="500"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ComboBox Name="CategoryCmb" SelectionChanged="CategoryCmb_SelectionChanged"/>
+        <ListBox Name="DishesLb" Style="{StaticResource DishesLb}" MouseDoubleClick="DishesLb_MouseDoubleClick" Width="870" Grid.Row="1" Height="500">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" Width="840"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+    </Grid>
+</Window>

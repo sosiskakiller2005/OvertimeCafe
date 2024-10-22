@@ -22,8 +22,8 @@ namespace OvertimeCafe.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Composition { get; set; }
-        public string Photo { get; set; }
         public int TypeId { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual Type Type { get; set; }
         public virtual ICollection<GuestDish> GuestDish { get; set; }

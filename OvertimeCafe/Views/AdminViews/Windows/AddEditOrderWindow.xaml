@@ -26,12 +26,13 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             
-            <TextBlock Name="DishTb" Text="{Binding Dish.Name}" Grid.Column="1" TextWrapping="Wrap"/>
+            <TextBlock Name="DishTbl" Text="{Binding Dish.Name}" Grid.Column="1" TextWrapping="Wrap"/>
             <Button Name="ChooseBtn" Content="Выбрать" Click="ChooseBtn_Click" Grid.Column="2"/>
-            <Image Source="{Binding Dish.Photo}" Grid.Row="1" Grid.Column="1"/>
+            <Image Source="{Binding Dish.Image}" Grid.Row="1" Grid.Column="1"/>
             <TextBlock Text="{Binding Dish.Type.Name}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"/>
             <TextBlock Text="{Binding Dish.Composition, StringFormat={}Состав: {0}}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="25  0 0 0"/>
             <Button Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_Click" Grid.Row="3" Grid.Column="1"/>
+            <Button Name="SaveBtn" Content="Сохранить" Click="SaveBtn_Click" Grid.Row="3" Grid.Column="2"/>
         </Grid>
     </Grid>
 </Window>

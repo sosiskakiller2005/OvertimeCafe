@@ -12,7 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Composition" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" />
           <Property Name="TypeId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DishStatus">
@@ -280,10 +280,10 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Type" Relationship="Self.FK_Dish_Type" FromRole="Dish" ToRole="Type" />
           <NavigationProperty Name="GuestDish" Relationship="Self.FK_GuestDish_Dish" FromRole="Dish" ToRole="GuestDish" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Guest">
           <Key>
@@ -566,10 +566,10 @@
           <EntitySetMapping Name="Dish">
             <EntityTypeMapping TypeName="OvertimeDbModel.Dish">
               <MappingFragment StoreEntitySet="Dish">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Composition" ColumnName="Composition" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
               </MappingFragment>
             </EntityTypeMapping>

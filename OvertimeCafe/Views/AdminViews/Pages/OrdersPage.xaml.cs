@@ -42,7 +42,7 @@ namespace OvertimeCafe.Views.AdminViews.Pages
 
         private void DishesLb_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow(DishesLb.SelectedItem as GuestDish);
+            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow(DishesLb.SelectedItem as GuestDish, GuestCmb.SelectedItem as Guest);
             addEditOrderWindow.ShowDialog();
         }
 
@@ -53,8 +53,12 @@ namespace OvertimeCafe.Views.AdminViews.Pages
 
         private void AddOrderBTn_Click(object sender, RoutedEventArgs e)
         {
-            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow();
-            addEditOrderWindow.ShowDialog();
+            AddEditOrderWindow addEditOrderWindow = new AddEditOrderWindow(GuestCmb.SelectedItem as Guest);
+            if (addEditOrderWindow.ShowDialog() == true)
+            {
+                List<GuestDish> dishes = App.GetContext().GuestDish.Where(gd => gd.GuestId == GuestCmb.SelectedIndex + 1).ToList();
+                DishesLb.ItemsSource = dishes;
+            }
         }
     }
 }
