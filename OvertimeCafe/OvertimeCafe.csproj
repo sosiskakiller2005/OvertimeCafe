@@ -151,6 +151,9 @@
     <Compile Include="Views\AdminViews\Windows\SelectDishWindow.xaml.cs">
       <DependentUpon>SelectDishWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChiefViews\Windows\ChiefWindow.xaml.cs">
+      <DependentUpon>ChiefWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\AuthorisationWindow.xaml.cs">
       <DependentUpon>AuthorisationWindow.xaml</DependentUpon>
     </Compile>
@@ -275,6 +278,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChiefViews\Windows\ChiefWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\AuthorisationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -294,7 +301,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ChiefViews\Pages\" />
-    <Folder Include="Views\ChiefViews\Windows\" />
     <Folder Include="Views\WaiterViews\Pages\" />
     <Folder Include="Views\WaiterViews\Windows\" />
   </ItemGroup>

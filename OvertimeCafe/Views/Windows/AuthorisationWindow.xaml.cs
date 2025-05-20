@@ -1,5 +1,6 @@
 ﻿using OvertimeCafe.AppData;
 using OvertimeCafe.Model;
+using OvertimeCafe.Views.ChiefViews.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,27 @@ namespace OvertimeCafe.Views.Windows
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password);
-            if (AuthorisationHelper.selectedUser.RoleId == 4)
+            if (AuthorisationHelper.Authorise(LoginTb.Text, PasswordTb.Password))
             {
-                AdminWindow adminWindow = new AdminWindow();
-                adminWindow.Show();
-                Close();
+                switch (AuthorisationHelper.selectedUser.RoleId)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        ChiefWindow chiefWindow = new ChiefWindow();
+                        chiefWindow.Show();
+                        Close();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        AdminWindow adminWindow = new AdminWindow();
+                        adminWindow.Show();
+                        Close();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

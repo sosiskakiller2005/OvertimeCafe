@@ -36,13 +36,13 @@
         <TextBlock Text="Номер телефона:" Margin="20 0 0 0" Grid.Row="2"/>
         <TextBox Name="PhoneNmberTb" Text="{Binding PhoneNumber}" Grid.Row="2" Grid.Column="2" Width="250" MaxLength="11"/>
         <TextBlock Text="Должность:" Margin="20 0 0 0" Grid.Row="3"/>
-        <ComboBox Name="RoleCmb" Grid.Row="3" Grid.Column="2" Width="250"/>
+        <ComboBox Name="RoleCmb" Grid.Row="3" Grid.Column="2" Width="250" Style="{StaticResource roundedCornersComboBox}"/>
         <TextBlock Text="Логин:" Margin="20 0 0 0" Grid.Row="4"/>
         <TextBox Name="LoginTb" Text="{Binding Login}" Grid.Row="4" Grid.Column="2" Width="250"/>
         <TextBlock Text="Пароль:" Margin="20 0 0 0" Grid.Row="5"/>
         <PasswordBox Name="PasswordTb" Grid.Row="5" Grid.Column="2" Width="250"/>
-        
-        
+
+
         <Button Name="SaveBtn" Content="Сохранить" Click="SaveBtn_Click" Grid.Row="8"/>
         <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="8"/>
         <Button Name="DeleteBTn" Content="Удалить" Click="DeleteBTn_Click" Grid.Row="8" Grid.Column="2"/>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OvertimeCafe.Views.Windows"
         mc:Ignorable="d"
         Title="Окно регистрации" Height="450" Width="700" 
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Border">
             <Setter Property="CornerRadius" Value="0" />
